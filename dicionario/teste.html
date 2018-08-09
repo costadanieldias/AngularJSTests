@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>Dicionario</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+			crossorigin="anonymous">
+	</head>
+	<div class="container">
+		<form class="form-horizonal" name="form" ng-controller="myController">		
+			<div class="form-group">
+				<div class="col-md-2">
+						<input type="text" ng-model="model.palavra"/>
+						<div class="alert" ng-show="model.msg">{{model.msg}}</div>						
+				</div>
+				<div class="col-md-5">
+				 		<input type="submit" ng-click="procura(model.palavra)" value="Pesquisar" >
+			  </div>
+			</div>			
+			<div class="form-group">
+					<div class="col-md-12">
+							<br>
+							<pre id="def" ng-show="(form.$submitted && !model.msg)"></pre>	  
+					</div>
+			</div>			
+		</form>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="./app/app.js"></script>
+</html>
+
+
+
+
+
